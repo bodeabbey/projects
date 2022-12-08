@@ -1,0 +1,32 @@
+---
+- become: yes
+  hosts: lb_public_ips
+  tasks:
+    - name: Add the user jumia to and a primary group of 'sudo'
+      ansible.builtin.user:
+        name: jumia
+        comment: jumia
+        groups: sudo
+        create_home: true
+        append: true
+        
+    - name: Add SSH key to 'jumia'
+      authorized_key:
+        user: jumia
+        state: present
+        key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+
+    - name: "Configure Load balancer"
+      package:
+        name: haproxy
+        
+    - template:
+        dest: "/etc/haproxy/haproxy.cfg"
+        src: "./haproxy.cfg"
+
+    - service:
+        name: "haproxy"
+        state: restarted
+
+    - include_tasks: disable_login.yml
+

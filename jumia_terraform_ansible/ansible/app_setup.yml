@@ -1,0 +1,6 @@
+# ---
+# - name: database tasks
+#   import_playbook: plays/db.yml
+
+- name: application tasks
+  import_playbook: plays/app.yml

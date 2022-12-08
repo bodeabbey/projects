@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars_files:
+    - db_vars.yml
+
+  tasks:
+    - name: "Create User and add dump DB"
+      command: /bin/bash -c "PGPASSWORD="{{ db_password }}"  psql --host="{{ db_host }}" --username="{{ db_username }}" --dbname="{{ db_name }}" < ../../database/create.sql"
+
+    - name: "Dumo DB"
+      command: /bin/bash -c "PGPASSWORD="{{ new_user_password }}"  psql --host="{{ db_host }}" --username="{{ new_db_user }}" --dbname="{{ new_db_name }}" < ../../jumia_phone_validator/database/sample.sql"
