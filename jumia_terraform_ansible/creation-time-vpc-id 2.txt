@@ -1,6 +1,0 @@
-VPC created on Tue 6 Dec 2022 23:25:21 WAT and VPC ID: vpc-07febc9442e5cd575
-VPC created on Thu 8 Dec 2022 04:19:41 WAT and VPC ID: vpc-06b8d549e316adbb7
-VPC created on Thu 8 Dec 2022 04:47:11 WAT and VPC ID: vpc-0af35cc1eb17e3487
-VPC created on Thu 8 Dec 2022 04:50:57 WAT and VPC ID: vpc-05bf200e23e90e8d4
-VPC created on Thu 8 Dec 2022 06:54:54 WAT and VPC ID: vpc-0407460b430263e78
-VPC created on Thu 8 Dec 2022 08:46:39 WAT and VPC ID: vpc-0fde6c87fdf689740

@@ -1,3 +1,0 @@
----
-- name: loadbalancer tasks
-  import_playbook: plays/lb.yml
